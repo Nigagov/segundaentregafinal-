@@ -1,0 +1,212 @@
+	}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+*{
+	font-family: 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-image: url(../img/burbujas.png);
+	background-attachment: fixed;
+}
+
+h1{
+	color: black;
+	text-transform: uppercase;
+	font-weight: 400;
+	font-size: 4rem;
+	grid-area: h1;
+}
+
+h2{
+	text-transform: uppercase;
+	margin: 20px;
+	/*display flex*/
+	display: flex;
+	justify-content: space-around;
+	grid-area: h2;
+	animation-name: textAlpha;
+	animation-duration: 2s;
+	animation-timing-function: ease;
+}
+
+nav{
+	background-color: rgb(200, 0, 0);
+	/*position*/
+	position: sticky;
+	top: 0;
+	/*padding*/
+	padding: 10px 30px;
+	/*display flex*/
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+nav	ul{
+	list-style: none;
+	display: flex;
+}
+
+nav ul li a{
+	color: black	;
+	text-decoration: none;
+	font-size: 2rem;
+	margin-right: 20px;
+}
+
+p{
+	color: black;
+	line-height: 2rem;
+	font-size: 1.6rem;
+}
+header	nav  ul{
+	display: flex;
+	list-style: none;
+}
+header	nav ul li{
+	margin-right: 10px;
+}
+header nav ul li a{
+	text-decoration: none;
+	color: black;
+}
+/*Selectores de clase*/
+
+.textCenter{
+	text-align: center;
+}
+
+.textWhite{
+	color: black;
+}
+
+.bgRed{
+	background-color: rgb(200, 0, 0);
+}
+
+.bgLight{
+	background-color: #B6B0B0;
+}
+
+.textMedium{
+	font-size: 3rem;
+	line-height: 2.4rem;
+}
+
+.textXl{
+	font-size: 5rem;
+} 
+
+
+/*Clases de BEM*/
+.encabezado__box--white{
+	text-align: center;
+	background-color: white;
+
+	/*Padding*/
+}
+.encabezado__img--fluid{
+	/*Size*/
+}
+
+.novedades__titulo--xl{
+	font-size: 3rem;
+}
+.novedades__titulo--md{
+	font-size: 2rem;
+}
+/*margin*/
+
+#contenedor-grid{
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(5, 1fr);
+	grid-template-areas: "h1"	"h2";
+}
+
+@media (min-widht: 768px){
+
+	#contenedor-grid{
+		grid-template-columns: repeat(2,	1fr);
+		grid-template-rows: 20vh 60vh 20vh;
+		grid-template-areas: none;
+	}
+}	
+
+@media	(min-widht: 1024px){
+	#contenedor-grid{
+		grid-template-columns: 50vw 25vw 25vw;
+		grid-template-rows: 20vh 50vh 30vh;
+		grid-template-areas: none;
+	}
+}
+header	{
+	display: flex;
+	align-content: center;
+	justify-content: center;
+}
+.linear-gradient{
+background: rgb(249,248,248);
+background: linear-gradient(90deg, rgba(249,248,248,0) 0%, rgba(240,3,3,0) 35%, rgba(250,2,2,0) 100%);
+}
+.transform:hover{
+	transform: translate(10px,25px);
+	cursor: pointer;
+}
+.rotate:hover{
+	-moz-transform: rotateX(45deg);
+	transform: rotateX(45deg);
+	cursor: pointer;
+	transition: transform 2s;
+}
+.scale:hover{
+	transform: scale(1.0);
+	cursor: pointer;
+	transition: transform 2s;
+}
+.skew:hover{
+box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+transform: skew(10deg);
+cursor: pointer;
+transition: transform 2s;
+}
+@keyframes animateDiv{
+	0%{width: 100px;}
+	25%{width: 200px;}
+	50%{width: 300px;}
+	75%{width: 200px; background-color: black;}
+	100%{width: 100px;background-color: white;}
+}
+.animate{
+	animation-name: animateDiv;
+	animation-iteration-count: infinite;
+	animation-timing-fuction: linear;
+	animation-duration: 3s;
+	animation-delay: 1s;
+}
+.transition{
+	width: 100px;
+	height: 100px;
+	cursor: pointer;
+	background-color: white;
+}
+.transition:hover{
+	width: 500px;
+	background-color: white;
+	color: black;
+	transition: all 3s;
+}
+@keyframes textAlpha{
+	from{opacity: 0;}
+	to{opacity: 1;}
+}
